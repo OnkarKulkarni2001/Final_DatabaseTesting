@@ -1,0 +1,20 @@
+version: "3.7"
+
+services:
+  db:
+    image: postgres:latest
+    volumes:
+      - postgres-data:/var/lib/postgresql/16/main
+    environment:
+      POSTGRES_USER: 'postgres'
+      POSTGRES_PASSWORD: 'postgres'
+      POSTGRES_DB: 'postgres'
+    networks:
+      - web-services
+
+
+networks:
+  web-services:
+
+volumes:
+  postgres-data:
